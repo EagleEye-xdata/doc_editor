@@ -29,4 +29,5 @@ jobs:
       allowed_path_pattern: '^(src/|tests/|scripts/|README\.md$|docs/|\.codex/development-state\.json$)'
       project_context: Preserve CRDT convergence, offline-first behavior, and the existing collaboration protocol. Do not modify server.js, database/persistence configuration, deployment files, or authentication behavior.
       focus: ${{ inputs.focus || 'general maintenance' }}
+      delivery_mode: direct
     secrets: inherit
