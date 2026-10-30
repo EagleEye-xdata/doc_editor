@@ -12,7 +12,9 @@ on:
         type: string
         default: general maintenance
 
-permissions: {}
+permissions:
+  contents: write
+  pull-requests: write
 
 concurrency:
   group: codex-maintenance-${{ github.repository }}
@@ -30,4 +32,5 @@ jobs:
       project_context: Preserve CRDT convergence, offline-first behavior, and the existing collaboration protocol. Do not modify server.js, database/persistence configuration, deployment files, or authentication behavior.
       focus: ${{ inputs.focus || 'general maintenance' }}
       delivery_mode: direct
-    secrets: inherit
+    secrets:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
